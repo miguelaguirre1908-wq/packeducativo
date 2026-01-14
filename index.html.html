@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Súper Educativo - Transforma la Educación por solo $5.000 COP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 -5px 20px rgba(239, 68, 68, 0.5); }
+            50% { box-shadow: 0 -5px 25px rgba(239, 68, 68, 0.8); }
+            100% { box-shadow: 0 -5px 20px rgba(239, 68, 68, 0.5); }
+        }
+        
+        .urgency-badge {
+            animation: shake 0.5s infinite alternate;
+        }
+        
+        @keyframes shake {
+            from { transform: translateX(-2px); }
+            to { transform: translateX(2px); }
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+            margin: 3rem 0;
+        }
+        
+        .guarantee-badge {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .content-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-left: 5px solid #3B82F6;
+        }
+        
+        .price-original {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .countdown-box {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #EC4899, #8B5CF6);
+            color: white;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.6);
+            background: linear-gradient(90deg, #db2777, #7c3aed);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(90deg, #3B82F6, #06b6d4);
+            color: white;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+            background: linear-gradient(90deg, #2563eb, #0891b2);
+        }
+        
+        .content-icon {
+            background: linear-gradient(135deg, #c7d2fe, #e9d5ff);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 90px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .sticky-cta {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem !important;
+            }
+            
+            .section-divider {
+                margin: 2rem 0;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 80px;
+                right: 15px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573019390843?text=¡Hola!%20Estoy%20interesado%20en%20el%20Pack%20Súper%20Educativo.%20Quisiera%20más%20información%20y%20comprar%20ahora." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Sticky CTA para móviles -->
+    <div class="sticky-cta bg-white p-4 md:hidden">
+        <div class="container mx-auto flex items-center justify-between">
+            <div>
+                <div class="font-bold text-lg text-gray-800">¡Solo $5.000 COP!</div>
+                <div class="text-sm text-gray-600">Oferta por tiempo limitado</div>
+            </div>
+            <a href="https://wa.me/573019390843?text=¡Hola!%20Quiero%20comprar%20el%20Pack%20Súper%20Educativo%20por%20$5.000%20COP%20antes%20de%20que%20termine%20la%20oferta." target="_blank" class="btn-primary">
+                COMPRAR AHORA <i class="fab fa-whatsapp ml-2"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header class="bg-gradient-to-r from-blue-50 to-purple-50 pt-10 pb-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Encabezado principal -->
+            <div class="text-center mb-10">
+                <div class="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full font-bold text-sm mb-4 urgency-badge">
+                    <i class="fas fa-bolt mr-2"></i> OFERTA POR TIEMPO LIMITADO
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    🚀 ¡TRANSFORMA LA EDUCACIÓN DE TUS HIJOS O ALUMNOS CON MÁS DE <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">10,000 RECURSOS EDUCATIVOS</span> PROFESIONALES POR MENOS DEL PRECIO DE UN JUEGO DE MESA! 🚀
+                </h1>
+                <p class="text-xl text-gray-700 mb-8 max-w-4xl mx-auto">
+                    Descarga AHORA el <span class="font-bold text-purple-600">"PACK SÚPER EDUCATIVO"</span> – Un Sistema Educativo Digital Completo valorado en <span class="line-through text-gray-500">$450.000 COP</span> que hoy puedes obtener por solo <span class="font-bold text-green-600 text-2xl">$5.000 COP</span>. Incluye TODO lo que necesitas para potenciar el aprendizaje desde preescolar hasta quinto de primaria, ahorrando cientos de horas de preparación y miles de pesos en material físico.
+                </p>
+            </div>
+
+            <!-- Contador de urgencia -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <div class="countdown-box text-white text-center">
+                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-clock mr-2"></i> OFERTA TERMINA EN:</h3>
+                    <div id="countdown" class="flex justify-center space-x-4 text-3xl font-bold">
+                        <div class="text-center">
+                            <div id="hours" class="bg-red-500 p-3 rounded-lg">02</div>
+                            <div class="text-sm mt-2">HORAS</div>
+                        </div>
+                        <div class="text-center">
+                            <div id="minutes" class="bg-red-500 p-3 rounded-lg">45</div>
+                            <div class="text-sm mt-2">MINUTOS</div>
+                        </div>
+                        <div class="text-center">
+                            <div id="seconds" class="bg-red-500 p-3 rounded-lg">30</div>
+                            <div class="text-sm mt-2">SEGUNDOS</div>
+                        </div>
+                    </div>
+                    <p class="text-yellow-300 mt-4 text-sm">¡Una vez que el contador llegue a cero, el precio volverá a $45.000 COP!</p>
+                </div>
+            </div>
+
+            <!-- Garantía y características principales -->
+            <div class="flex flex-wrap justify-center items-center gap-8 mb-12">
+                <div class="flex items-center">
+                    <div class="bg-green-100 text-green-700 p-3 rounded-full mr-3">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">Garantía de 7 días</div>
+                        <div class="text-sm text-gray-600">Si no te encanta, te devolvemos tu dinero</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-blue-100 text-blue-700 p-3 rounded-full mr-3">
+                        <i class="fas fa-download text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">Descarga Inmediata</div>
+                        <div class="text-sm text-gray-600">Acceso instantáneo después del pago</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="bg-purple-100 text-purple-700 p-3 rounded-full mr-3">
+                        <i class="fas fa-infinity text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">Acceso de por vida</div>
+                        <div class="text-sm text-gray-600">Actualizaciones gratuitas incluidas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Principal -->
+            <div class="text-center">
+                <a href="https://wa.me/573019390843?text=¡Hola!%20Quiero%20comprar%20el%20Pack%20Súper%20Educativo%20de%20$5.000%20COP.%20Vi%20la%20oferta%20con%20más%20de%2010,000%20recursos%20educativos%20y%20quiero%20adquirirlo%20antes%20de%20que%20termine%20la%20promoción." target="_blank" class="btn-primary text-2xl py-4 px-10 inline-block">
+                    <i class="fab fa-whatsapp mr-3"></i> ¡QUIERO EL PACK SÚPER EDUCATIVO POR SOLO $5.000 COP!
+                    <div class="text-lg font-normal mt-1">Acceso Inmediato • Más de 10,000 Recursos • 100% Imprimible</div>
+                </a>
+                <p class="text-gray-600 mt-4 text-sm">
+                    <i class="fas fa-lock mr-2"></i> Pago 100% seguro • Compra directa por WhatsApp
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-6xl px-4 py-10">
+        
+        <!-- Sección: El Problema -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                ¿ESTÁS CANSADO DE ESTAS SITUACIONES FRUSTRANTES?
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-red-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 text-red-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-search text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Búsqueda Interminable y Desorganizada</h3>
+                            <p class="text-gray-700">Pasas horas y horas buscando en decenas de sitios web, blogs educativos y redes sociales, descargando archivos sueltos, sin una estructura coherente, perdiendo un tiempo valioso que podrías dedicar a tus hijos o alumnos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-red-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 text-red-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-money-bill-wave text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Gastos Excesivos en Recursos Individuales</h3>
+                            <p class="text-gray-700">Compras cuadernillos por $15.000 COP aquí, un pack de matemáticas por $20.000 COP allá, material de lectura por $12.000 COP en otro sitio. Al final del mes, has gastado más de $100.000 COP en recursos dispersos y sin una metodología unificada.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-red-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 text-red-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-user-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Material Aburrido y Desactualizado</h3>
+                            <p class="text-gray-700">Los niños se aburren con los mismos métodos tradicionales, las fotocopias en blanco y negro, los ejercicios repetitivos. Necesitas material fresco, colorido, visualmente atractivo y profesional que realmente capture su atención y los motive a aprender.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-red-200">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 text-red-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-puzzle-piece text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Falta de un Sistema Integral</h3>
+                            <p class="text-gray-700">Tienes material de matemáticas por un lado, lecturas por otro, actividades motrices en otra carpeta. No existe un ecosistema educativo completo que cubra todas las áreas del desarrollo infantil de forma organizada y progresiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-8 rounded-2xl text-center border border-blue-300">
+                <h3 class="text-2xl font-bold text-blue-800 mb-4">¡HA LLEGADO LA SOLUCIÓN DEFINITIVA!</h3>
+                <p class="text-gray-800 text-lg">El <span class="font-bold">PACK SÚPER EDUCATIVO</span> resuelve TODOS estos problemas de una vez por todas, organizando más de 10,000 recursos profesionales en un sistema coherente, progresivo y listo para usar, por una inversión mínima de solo <span class="text-green-600 font-bold text-xl">$5.000 COP</span>.</p>
+                <a href="https://wa.me/573019390843?text=¡Hola!%20Vi%20que%20el%20Pack%20Súper%20Educativo%20resuelve%20los%20problemas%20de%20búsqueda%20de%20material%20y%20quiero%20comprarlo%20ahora%20por%20$5.000%20COP." target="_blank" class="btn-primary mt-6 inline-block">
+                    <i class="fab fa-whatsapp mr-2"></i> QUIERO LA SOLUCIÓN COMPLETA
+                </a>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Sección: Lo que incluye el Pack Súper Educativo de $5.000 COP -->
+        <section class="mb-16" id="pack-super">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
+                <i class="fas fa-box-open text-purple-500 mr-3"></i> 
+                ESTO ES LO QUE RECIBIRÁS EN EL <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">PACK SÚPER EDUCATIVO</span> POR SOLO <span class="text-green-600">$5.000 COP</span>
+            </h2>
+            <p class="text-center text-gray-600 text-xl mb-12">Un ecosistema educativo completo, organizado y listo para usar. Más de 10,000 recursos profesionales descargables e imprimibles.</p>
+            
+            <!-- Carpeta #1 -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-10 border-l-8 border-blue-500">
+                <div class="flex items-center mb-8">
+                    <div class="content-icon">
+                        <i class="fas fa-folder-open text-2xl text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">📁 CARPETA #1 – <span class="text-blue-600">MEGAPACK DE APRENDIZAJE</span></h3>
+                        <p class="text-gray-700">Un ecosistema educativo completo y estructurado que cubre todas las áreas del desarrollo infantil desde preescolar hasta quinto de primaria.</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="content-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg mr-3">
+                                <i class="fas fa-book-reader text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">PACK DE COMPRENSIÓN LECTORA</h4>
+                                <p class="text-gray-700">Contenido meticulosamente clasificado desde preescolar hasta quinto de primaria, con actividades progresivas diseñadas por especialistas para mejorar la lectura, el análisis y la comprensión textual.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-green-100 text-green-600 p-2 rounded-lg mr-3">
+                                <i class="fas fa-pencil-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">PACK DE ALFABETIZACIÓN INFANTIL</h4>
+                                <p class="text-gray-700">Sistema completo para enseñar a leer y escribir que incluye cartillas educativas, cuadernillos para preescolar, kit de caligrafía, colores y formas, y material paso a paso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-yellow-100 text-yellow-600 p-2 rounded-lg mr-3">
+                                <i class="fas fa-gift text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">PACK DE BONOS EDUCATIVOS</h4>
+                                <p class="text-gray-700">Colección de recursos complementarios que incluye audiocuentos, cuentos y fábulas, recursos prácticos para padres, educación sexual infantil, libros de computación, educación física, ciencias y contenido de religión.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-100 text-purple-600 p-2 rounded-lg mr-3">
+                                <i class="fas fa-school text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">PACK EDUCATIVO ESCOLAR</h4>
+                                <p class="text-gray-700">Material específicamente diseñado para docentes y padres que educan en casa, que contiene libros en PDF, tarjetillas educativas, actividades prácticas, caligrafía, coordinación motora y material de apoyo escolar completo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-red-100 text-red-600 p-2 rounded-lg mr-3">
+                                <i class="fas fa-calculator text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">PACK DE CARTILLAS MATEMÁTICAS</h4>
+                                <p class="text-gray-700">Sistema completo de matemáticas para primaria que contiene contenido educativo de primaria, problemas matemáticos, sumas y restas, fracciones, tablas de multiplicar y rompecabezas matemáticos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-100 text-pink-600 p-2 rounded-lg mr-3">
+                                <i class="fas fa-puzzle-piece text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">PACK DE MATERIAL DIDÁCTICO DE APOYO</h4>
+                                <p class="text-gray-700">Recursos lúdicos y complementarios que incluyen imágenes para colorear, actividades con números, laberintos, rompecabezas, sopas de letras y libros de personajes para colorear.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200">
+                    <p class="text-blue-800 text-lg font-bold text-center">
+                        <i class="fas fa-info-circle mr-2"></i> 
+                        ¡IMPORTANTE! TODO este contenido detallado anteriormente está incluido DENTRO de la Carpeta #1 solamente. ¡Y aún hay MÁS!
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Carpeta #2 -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-10 border-l-8 border-green-500">
+                <div class="flex items-center mb-8">
+                    <div class="content-icon">
+                        <i class="fas fa-palette text-2xl text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">📁 CARPETA #2 – <span class="text-green-600">MATERIAL PARA COLOREAR</span></h3>
+                        <p class="text-gray-700">Un recurso creativo, relajante y educativo ideal para desarrollar la motricidad fina, la concentración y la expresión artística en niños y una actividad de relajación para padres.</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-font text-green-500 mr-2"></i> Alfabeto para colorear
+                        </h4>
+                        <p class="text-gray-700">Cada letra del abecedario presentada en formato grande y decorativo, con imágenes asociadas que refuerzan el sonido inicial.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-sort-alpha-down text-green-500 mr-2"></i> Abecedario completo
+                        </h4>
+                        <p class="text-gray-700">Set completo del abecedario en mayúsculas y minúsculas, con diseños temáticos para cada letra.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-sort-numeric-down text-green-500 mr-2"></i> Números ilustrados
+                        </h4>
+                        <p class="text-gray-700">Números del 1 al 100 con representaciones visuales de la cantidad correspondiente.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-circle-notch text-green-500 mr-2"></i> Mandalas infantiles
+                        </h4>
+                        <p class="text-gray-700">Colección de mandalas especialmente diseñadas para niños, con diferentes niveles de complejidad.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-spa text-green-500 mr-2"></i> Arte antiestrés
+                        </h4>
+                        <p class="text-gray-700">Diseños intricados y patrones repetitivos que funcionan como terapia artística.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-print text-green-500 mr-2"></i> Imágenes listas para imprimir
+                        </h4>
+                        <p class="text-gray-700">Cientos de imágenes en alta calidad, organizadas por categorías, optimizadas para impresión.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 md:col-span-2">
+                        <h4 class="text-lg font-bold mb-2 flex items-center">
+                            <i class="fas fa-book text-green-500 mr-2"></i> Libros completos para colorear
+                        </h4>
+                        <p class="text-gray-700">Libros temáticos enteros para colorear, con narrativas visuales que cuentan historias página a página.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carpeta #3 -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-10 border-l-8 border-red-500">
+                <div class="flex items-center mb-8">
+                    <div class="content-icon">
+                        <i class="fas fa-globe-americas text-2xl text-red-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">📁 CARPETA #3 – <span class="text-red-600">KIT EDUCATIVO DE INGLÉS</span></h3>
+                        <p class="text-gray-700">Una introducción didáctica, visual y efectiva al inglés como segunda lengua, diseñada específicamente para niños hispanohablantes con metodología de aprendizaje natural.</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="text-xl font-bold mb-4 text-center text-red-600">🎴 FLASHCARDS EDUCATIVAS</h4>
+                        <p class="text-gray-700 mb-4">Sistema completo de tarjetas visuales bilingües organizadas por categorías:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-paw text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Animales:</span> Más de 100 animales comunes y exóticos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tshirt text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Ropa:</span> Vocabulario completo de prendas de vestir</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-utensils text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Comidas:</span> Alimentos, frutas, verduras y bebidas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-font text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Alfabeto:</span> Abecedario inglés completo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-cube text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Objetos cotidianos:</span> Vocabulario de la casa y escuela</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="text-xl font-bold mb-4 text-center text-red-600">📚 PDFs EDUCATIVOS COMPLETOS</h4>
+                        <p class="text-gray-700 mb-4">Guías estructuradas para aprender inglés de forma progresiva:</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-fill-drip text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Colores:</span> Libro completo para aprender los colores en inglés</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-shapes text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Figuras geométricas:</span> Guía visual de formas 2D y 3D</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-user text-red-500 mt-1 mr-3"></i>
+                                <span><span class="font-bold">Partes del cuerpo humano:</span> Sistema completo de anatomía básica</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-6 bg-red-50 rounded-xl border border-red-200">
+                    <div class="flex items-center">
+                        <div class="bg-red-100 text-red-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-print text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-red-700">¡TODO EL CONTENIDO ES IMPRIMIBLE, DESCARGABLE Y REUTILIZABLE!</h4>
+                            <p class="text-red-800">Puedes imprimir las veces que necesites, para todos tus hijos o alumnos, sin límites ni restricciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparación de valor -->
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-300 mb-12">
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-balance-scale mr-3 text-yellow-600"></i>
+                    COMPARACIÓN DE VALOR: ¿CUÁNTO COSTARÍA TODO ESTO SI LO COMPRARAS POR SEPARADO?
+                </h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-xl overflow-hidden shadow">
+                        <thead class="bg-yellow-100">
+                            <tr>
+                                <th class="py-4 px-6 text-left font-bold text-gray-800">Recurso</th>
+                                <th class="py-4 px-6 text-left font-bold text-gray-800">Precio en el mercado</th>
+                                <th class="py-4 px-6 text-left font-bold text-gray-800">En nuestro Pack</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Pack de comprensión lectora (por grado)</td>
+                                <td class="py-4 px-6"><span class="price-original">$25.000 COP c/u</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Kit de alfabetización completo</td>
+                                <td class="py-4 px-6"><span class="price-original">$35.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Pack de bonos educativos variados</td>
+                                <td class="py-4 px-6"><span class="price-original">$40.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Material escolar para docentes</td>
+                                <td class="py-4 px-6"><span class="price-original">$50.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Cartillas matemáticas completas</td>
+                                <td class="py-4 px-6"><span class="price-original">$30.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Material didáctico de apoyo</td>
+                                <td class="py-4 px-6"><span class="price-original">$25.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Pack para colorear completo</td>
+                                <td class="py-4 px-6"><span class="price-original">$20.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6">Kit educativo de inglés</td>
+                                <td class="py-4 px-6"><span class="price-original">$45.000 COP</span></td>
+                                <td class="py-4 px-6 font-bold text-green-600">INCLUIDO</td>
+                            </tr>
+                            <tr class="bg-gray-100 font-bold">
+                                <td class="py-4 px-6 text-lg">VALOR TOTAL EN EL MERCADO</td>
+                                <td class="py-4 px-6 text-lg"><span class="price-original">$270.000 COP</span></td>
+                                <td class="py-4 px-6 text-lg text-green-600">SOLO $5.000 COP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <div class="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold text-2xl py-4 px-8 rounded-full">
+                        <i class="fas fa-percentage mr-3"></i> ¡AHORRA MÁS DEL 98% DEL VALOR REAL!
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="https://wa.me/573019390843?text=¡Hola!%20Vi%20la%20comparación%20de%20valor%20y%20quiero%20aprovechar%20el%20ahorro%20del%2098%%20en%20el%20Pack%20Súper%20Educativo%20de%20$5.000%20COP." target="_blank" class="btn-primary text-xl py-4 px-10 inline-block">
+                        <i class="fab fa-whatsapp mr-3"></i> ¡QUIERO APROVECHAR ESTE AHORRO DEL 98%!
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Sección: Upsell - Pack Extremo -->
+        <section class="mb-16" id="pack-extremo">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
+                <i class="fas fa-bolt text-yellow-500 mr-3"></i> 
+                OFERTA ESPECIAL DE UPGRADE: POR SOLO <span class="text-green-600">$5.000 COP ADICIONALES</span> OBTÉN EL <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">PACK EXTREMO</span> CON TODO ESTO:
+            </h2>
+            <p class="text-center text-gray-600 text-xl mb-12">Pasa de $5.000 COP a $10.000 COP y multiplica por 10 el valor recibido. Incluye TODO el Pack Súper Educativo MÁS estos recursos premium.</p>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl shadow-2xl p-8 border-4 border-orange-400 mb-10">
+                <div class="text-center mb-10">
+                    <div class="inline-block bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold text-2xl py-3 px-8 rounded-full mb-6">
+                        🔥 PACK EXTREMO $10.000 COP (INCLUYE TODO LO ANTERIOR +)
+                    </div>
+                    <p class="text-xl text-gray-800">Por solo $5.000 COP adicionales, recibes TODO el Pack Súper Educativo de $5.000 COP MÁS estos recursos premium:</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-orange-100 text-orange-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-video text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">🎥 MASTERCLASS EN VIDEO: "DE MALCRIADO A RESPONSABLE"</h4>
+                                <p class="text-gray-700">10 clases en video profesionales para padres y docentes sobre educación y disciplina infantil, con técnicas psicológicas actualizadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-globe-europe text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">🌍 PACK PARA APRENDER IDIOMAS (5 IDIOMAS)</h4>
+                                <p class="text-gray-700">Sistema introductorio completo para aprender los fundamentos de: Ruso, Chino, Francés, Alemán y Japonés.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-pink-100 text-pink-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-paint-brush text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">🎨 +300 LIBROS PARA COLOREAR EDITABLES</h4>
+                                <p class="text-gray-700">Colección masiva de más de 300 libros para colorear en formato editable, incluyendo libros de anime, plantillas para hacer cajas y recursos creativos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-green-100 text-green-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">📚 COLECCIÓN COMPLETA DE CONDORITO</h4>
+                                <p class="text-gray-700">La colección digital completa del icónico personaje de revistas latinoamericanas, ideal para fomentar la lectura recreativa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-teal-100 text-teal-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-boxes text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">📦 PACK DE IMPRIMIBLES PARA EMPRENDER</h4>
+                                <p class="text-gray-700">Sistema completo enfocado en crear cajas personalizadas para pequeños emprendimientos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-purple-100 text-purple-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-hat-wizard text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">🎩 CURSO COMPLETO DE MAGIA EN VIDEO</h4>
+                                <p class="text-gray-700">Curso en video profesional para aprender magia recreativa, con trucos con cartas, trucos con monedas y magia recreativa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-user-friends text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">👨‍👩‍👧 PACK EDUCATIVO PARA PADRES</h4>
+                                <p class="text-gray-700">Recursos especializados para la formación parental que incluye educación financiera para niños y cursos para paternidad efectiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-orange-200">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-gray-100 text-gray-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-draw-polygon text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">✏️ CURSO DE DIBUJO A LÁPIZ (2 CURSOS COMPLETOS)</h4>
+                                <p class="text-gray-700">Dos cursos especializados en dibujo: Curso de dibujo a lápiz de perros y gatos y Curso de dibujo a lápiz para principiantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center p-8 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl text-white">
+                    <h3 class="text-3xl font-bold mb-4">¡VALOR TOTAL INCREÍBLE!</h3>
+                    <p class="text-xl mb-6">El Pack Súper Educativo ($5.000 COP) + El Pack Extremo ($5.000 COP adicionales) =</p>
+                    <div class="text-5xl font-bold mb-4">$10.000 COP TOTAL</div>
+                    <p class="text-lg">Por menos del precio de un libro físico, obtienes un sistema educativo completo + cursos premium + recursos para emprendimiento + entretenimiento familiar.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://wa.me/573019390843?text=¡Hola!%20Quiero%20el%20PACK%20EXTREMO%20de%20$10.000%20COP%20que%20incluye%20todo%20el%20Pack%20Súper%20Educativo%20más%20los%20cursos%20premium%20y%20material%20adicional." target="_blank" class="btn-secondary text-2xl py-5 px-10">
+                    <i class="fab fa-whatsapp mr-3"></i> ¡QUIERO EL PACK EXTREMO COMPLETO POR $10.000 COP!
+                </a>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Sección: Testimonios -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-comment-alt text-blue-500 mr-3"></i> 
+                LO QUE DICEN PADRES, DOCENTES Y EDUCADORES QUE YA USAN NUESTROS RECURSOS
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">M</div>
+                        <div>
+                            <div class="font-bold">María González</div>
+                            <div class="text-sm text-gray-600">Madre de dos niños, Bogotá</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Como madre que educa en casa, este pack ha sido una bendición. El material es tan completo que he podido organizar todo el año escolar para mis dos hijos de diferentes edades."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">C</div>
+                        <div>
+                            <div class="font-bold">Carlos Rodríguez</div>
+                            <div class="text-sm text-gray-600">Docente de primaria, Medellín</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"En mis 15 años como docente, nunca había visto un recurso tan completo y bien organizado. El pack de comprensión lectora es especialmente bueno. Ha ahorrado horas de preparación cada semana."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">A</div>
+                        <div>
+                            <div class="font-bold">Ana Martínez</div>
+                            <div class="text-sm text-gray-600">Psicopedagoga, Cali</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"Recomiendo este material a todas las familias con las que trabajo. Los recursos de educación emocional y el material para colorear antiestrés son herramientas valiosísimas."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Sección: Oferta Final y Garantía -->
+        <section class="mb-16" id="oferta">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">RESUMEN DE LA OFERTA EXCLUSIVA</h2>
+                <p class="text-xl text-gray-700">Elige la opción que mejor se adapte a tus necesidades:</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Pack Súper -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-400">
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-blue-100 text-blue-700 font-bold py-2 px-6 rounded-full mb-4">
+                            OPCIÓN BÁSICA
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">PACK SÚPER EDUCATIVO</h3>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">$5.000 COP</div>
+                        <div class="text-gray-600">Pago único • Acceso de por vida</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Carpeta #1: Megapack de Aprendizaje (6 packs completos)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Carpeta #2: Material para Colorear (+500 imágenes)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Carpeta #3: Kit Educativo de Inglés (Flashcards + PDFs)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Más de 10,000 recursos imprimibles y reutilizables</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Acceso inmediato después del pago</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Garantía de 7 días de devolución</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="https://wa.me/573019390843?text=¡Hola!%20Quiero%20comprar%20el%20PACK%20SÚPER%20EDUCATIVO%20por%20$5.000%20COP.%20Incluye%20Megapack%20de%20Aprendizaje,%20Material%20para%20Colorear%20y%20Kit%20de%20Inglés." target="_blank" class="btn-primary w-full text-center py-4 text-xl">
+                        <i class="fab fa-whatsapp mr-3"></i> QUIERO EL PACK SÚPER ($5.000 COP)
+                    </a>
+                </div>
+                
+                <!-- Pack Extremo -->
+                <div class="bg-gradient-to-b from-orange-50 to-white rounded-2xl shadow-2xl p-8 border-4 border-orange-500 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-2 px-8 rounded-full">
+                            MÁS VENDIDO • MEJOR VALOR
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mb-6 pt-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">PACK EXTREMO COMPLETO</h3>
+                        <div class="text-4xl font-bold text-orange-600 mb-2">$10.000 COP</div>
+                        <div class="text-gray-600">Pago único • Acceso de por vida</div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <p class="font-bold text-gray-800 mb-2">INCLUYE TODO EL PACK SÚPER EDUCATIVO +</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>Masterclass en video "De malcriado a responsable" (10 clases)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>Pack para aprender 5 idiomas (Ruso, Chino, Francés, Alemán, Japonés)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>+300 libros para colorear editables</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>Colección completa de CONDORITO</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>Pack de imprimibles para emprender</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>Curso completo de magia en video</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>Pack educativo para padres</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plus text-orange-500 mt-1 mr-3"></i>
+                                <span>2 cursos de dibujo a lápiz (animales y principiantes)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://wa.me/573019390843?text=¡Hola!%20Quiero%20el%20PACK%20EXTREMO%20COMPLETO%20de%20$10.000%20COP%20que%20incluye%20todo%20el%20Pack%20Súper%20Educativo%20y%20todos%20los%20bonos%20adicionales%20(masterclass,%20idiomas,%20magia,%20dibujo,%20etc.)." target="_blank" class="btn-secondary w-full text-center py-4 text-xl bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
+                        <i class="fab fa-whatsapp mr-3"></i> QUIERO EL PACK EXTREMO ($10.000 COP)
+                    </a>
+                    <p class="text-center text-gray-600 mt-4 text-sm">
+                        <i class="fas fa-gem text-orange-500 mr-2"></i> ¡La opción más popular! 73% de los clientes eligen esta opción
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Garantía -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-100 rounded-2xl p-8 text-center border border-green-300">
+                <div class="flex flex-col md:flex-row items-center justify-center mb-6">
+                    <div class="guarantee-badge bg-white p-6 rounded-full shadow-lg border-4 border-green-300 mb-6 md:mb-0 md:mr-8">
+                        <i class="fas fa-shield-alt text-5xl text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">GARANTÍA DE 7 DÍAS "PRUEBA SIN RIESGO"</h3>
+                        <p class="text-lg text-gray-800 max-w-3xl">
+                            Te damos <span class="font-bold text-green-700">7 días completos</span> para que explores TODO el material. Si por cualquier razón no estás completamente satisfecho con la calidad, organización y valor del Pack Súper Educativo, simplemente envíanos un email y te devolvemos el 100% de tu dinero, sin preguntas incómodas, sin condiciones ocultas.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <i class="fab fa-whatsapp text-green-600 text-2xl mr-3"></i>
+                    <p class="text-gray-700">Compra 100% segura por WhatsApp • Atención personalizada</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <!-- Preguntas Frecuentes -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-question-circle text-purple-500 mr-3"></i> 
+                PREGUNTAS FRECUENTES
+            </h2>
+            
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                    <h4 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question text-blue-500 mr-3"></i> ¿Cómo recibo el material después de pagar?
+                    </h4>
+                    <p class="text-gray-700">Inmediatamente después de confirmarse tu pago por WhatsApp, recibirás los enlaces de descarga directa a todas las carpetas. El acceso es de por vida, incluyendo futuras actualizaciones.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                    <h4 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question text-blue-500 mr-3"></i> ¿El material es realmente imprimible ilimitadamente?
+                    </h4>
+                    <p class="text-gray-700">¡Sí! Todos los archivos están en formato PDF de alta calidad, optimizados para impresión en casa o en copistería. Puedes imprimir las copias que necesites para todos tus hijos o alumnos, sin restricciones ni límites.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                    <h4 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question text-blue-500 mr-3"></i> ¿Para qué edades está diseñado el material?
+                    </h4>
+                    <p class="text-gray-700">El Pack Súper Educativo cubre desde preescolar (3-4 años) hasta quinto de primaria (10-11 años). El material está organizado por niveles de dificultad, por lo que puedes elegir las actividades apropiadas para cada niño.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                    <h4 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question text-blue-500 mr-3"></i> ¿Puedo compartir el material con otros padres o colegas?
+                    </h4>
+                    <p class="text-gray-700">La licencia es para uso personal o familiar. Puedes usar el material con todos tus hijos y alumnos directos. Sin embargo, no está permitida la redistribución, reventa o compartición masiva del material.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                    <h4 class="text-xl font-bold mb-3 flex items-center">
+                        <i class="fas fa-question text-blue-500 mr-3"></i> ¿Qué métodos de pago aceptan?
+                    </h4>
+                    <p class="text-gray-700">Aceptamos todos los métodos de pago principales: Tarjetas de crédito/débito, Mercado Pago, PayPal, transferencias bancarias en Colombia, y pago en efectivo. El proceso es 100% seguro.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Último CTA -->
+        <section class="mb-16 text-center">
+            <div class="bg-gradient-to-r from-blue-900 to-purple-900 text-white p-10 rounded-3xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-6">¡NO PIERDAS ESTA OPORTUNIDAD ÚNICA!</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Por solo $5.000 COP obtienes un sistema educativo completo que transformará la forma en que tus hijos o alumnos aprenden. Miles de padres y docentes ya están usando este material con resultados excepcionales.</p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold mb-2">10.000+</div>
+                        <div class="text-lg">Recursos educativos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold mb-2">2.300+</div>
+                        <div class="text-lg">Familias satisfechas</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold mb-2">98%</div>
+                        <div class="text-lg">De ahorro vs valor real</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="https://wa.me/573019390843?text=¡URGENTE!%20Quiero%20comprar%20el%20Pack%20Súper%20Educativo%20de%20$5.000%20COP%20antes%20de%20que%20termine%20la%20oferta.%20Vi%20el%20contador%20y%20no%20quiero%20perder%20esta%20oportunidad." target="_blank" class="btn-primary text-2xl py-5 px-10">
+                        <i class="fab fa-whatsapp mr-3"></i> OBTENER PACK SÚPER ($5.000 COP)
+                    </a>
+                    <a href="https://wa.me/573019390843?text=¡URGENTE!%20Quiero%20el%20Pack%20Extremo%20de%20$10.000%20COP%20con%20todo%20incluido%20antes%20de%20que%20termine%20la%20oferta.%20No%20quiero%20perder%20los%20bonos%20adicionales." target="_blank" class="btn-secondary text-2xl py-5 px-10 bg-gradient-to-r from-orange-500 to-red-500">
+                        <i class="fab fa-whatsapp mr-3"></i> OBTENER PACK EXTREMO ($10.000 COP)
+                    </a>
+                </div>
+                
+                <p class="mt-8 text-lg">
+                    <i class="fas fa-exclamation-triangle text-yellow-300 mr-2"></i> 
+                    <span class="font-bold">OFERTA POR TIEMPO LIMITADO:</span> Esta promoción a $5.000 COP finaliza en <span id="countdown-final-hours">02</span> horas <span id="countdown-final-minutes">45</span> minutos. ¡No esperes más!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-4">Pack Súper Educativo</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto">Transformando la educación infantil con recursos accesibles, completos y de alta calidad para padres, docentes y educadores en toda Colombia e Hispanoamérica.</p>
+            </div>
+            
+            <div class="text-center text-gray-400 text-sm">
+                <p class="mb-4">
+                    <strong>Contacto para compras:</strong> 
+                    <a href="https://wa.me/573019390843" target="_blank" class="text-green-400 hover:text-green-300">
+                        <i class="fab fa-whatsapp mr-1"></i> WhatsApp: +57 301 9390843
+                    </a>
+                </p>
+                <p class="mb-4">
+                    <a href="#" class="hover:text-white mr-6">Términos del servicio</a> | 
+                    <a href="#" class="hover:text-white mx-6">Política de privacidad</a> | 
+                    <a href="#" class="hover:text-white ml-6">Contacto</a>
+                </p>
+                <p>Esta es una página de ventas. Los resultados pueden variar según la dedicación y aplicación del material. Garantía de devolución de 7 días aplica a todos los productos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Contador de urgencia
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date();
+            target.setHours(now.getHours() + 2);
+            target.setMinutes(45);
+            target.setSeconds(30);
+            
+            // Si ya pasó la hora objetivo, reiniciar para el próximo día
+            if (now > target) {
+                target.setDate(target.getDate() + 1);
+            }
+            
+            const diff = target - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('countdown-final-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-final-minutes').textContent = minutes.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mostrar/ocultar CTA sticky en scroll
+        let lastScrollTop = 0;
+        const stickyCta = document.querySelector('.sticky-cta');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                if(scrollTop > 500) {
+                    stickyCta.classList.remove('hidden');
+                }
+            } else {
+                // Scrolling up
+                if(scrollTop < 100) {
+                    stickyCta.classList.add('hidden');
+                }
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Función para generar mensaje de WhatsApp personalizado según el producto
+        function generateWhatsAppMessage(product, price) {
+            let baseMessage = "¡Hola! Estoy interesado en ";
+            
+            if (product === "Pack Súper") {
+                return encodeURIComponent(baseMessage + "el Pack Súper Educativo de $5.000 COP. Vi la oferta con más de 10,000 recursos educativos y quiero adquirirlo antes de que termine la promoción.");
+            } else if (product === "Pack Extremo") {
+                return encodeURIComponent(baseMessage + "el Pack Extremo de $10.000 COP que incluye todo el Pack Súper Educativo más los cursos premium y material adicional.");
+            } else {
+                return encodeURIComponent("¡Hola! Estoy interesado en el Pack Súper Educativo. Quisiera más información y comprar ahora.");
+            }
+        }
+        
+        // Configurar todos los botones de WhatsApp
+        document.querySelectorAll('.btn-whatsapp').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const product = this.getAttribute('data-product');
+                const price = this.getAttribute('data-price');
+                const message = generateWhatsAppMessage(product, price);
+                const whatsappUrl = `https://wa.me/573019390843?text=${message}`;
+                
+                // Abrir en nueva pestaña
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
